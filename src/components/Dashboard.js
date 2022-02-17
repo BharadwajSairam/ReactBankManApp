@@ -22,7 +22,7 @@ const Dashboard = (props) => {
         console.log('inside useeffect');
         let propUser = props.id;
         console.log(props.id);
-        axios.post('http://localhost:8080/getUser', {propUser}).then(res => {
+        axios.post('/getUser', {propUser}).then(res => {
             console.log(res.data.value);
             
         setuserdetails(res.data.value);
@@ -52,7 +52,7 @@ const Dashboard = (props) => {
             contact: contact ? contact : userdetails.contact
         }
         
-        axios.post('http://localhost:8080/updateUser',{editedUser}).then(res=>{
+        axios.post('/updateUser',{editedUser}).then(res=>{
             console.log(res.data);
         })    
         setuserdetails(editedUser)
