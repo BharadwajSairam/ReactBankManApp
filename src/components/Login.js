@@ -19,7 +19,7 @@ function Login(props) {
             password: password
         }
         
-        axios.post("http://localhost:8080/validateUser", { validateuser }).then(res => {
+        axios.post("/validateUser", { validateuser }).then(res => {
             
             if (res.data.trim() == "Invalid Username") {
                 setFlag(false)
