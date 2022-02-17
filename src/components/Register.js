@@ -78,7 +78,7 @@ class Register extends React.Component {
 
             }))
             console.log(userdetails);
-            axios.post(`http://localhost:8080/register`, { userdetails }).then(res => {
+            axios.post(`/register`, { userdetails }).then(res => {
                 console.log(res);
             })
             console.log(this.props.dispatch(addUser(userdetails)))
