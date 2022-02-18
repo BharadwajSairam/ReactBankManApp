@@ -78,7 +78,7 @@ class Register extends React.Component {
 
             }))
             console.log(userdetails);
-            axios.post(`/register`, { userdetails }).then(res => {
+            axios.post(`http://sairam-manchella.us-east-1.elasticbeanstalk.com/register`, { userdetails }).then(res => {
                 console.log(res);
             })
             console.log(this.props.dispatch(addUser(userdetails)))
