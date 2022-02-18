@@ -22,7 +22,7 @@ const Dashboard = (props) => {
         console.log('inside useeffect');
         let propUser = props.id;
         console.log(props.id);
-        axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/getUser', {propUser}).then(res => {
+        axios.post('http://ec2-18-208-201-20.compute-1.amazonaws.com/getUser', {propUser}).then(res => {
             console.log(res.data.value);
             
         setuserdetails(res.data.value);
@@ -52,7 +52,7 @@ const Dashboard = (props) => {
             contact: contact ? contact : userdetails.contact
         }
         
-        axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/updateUser',{editedUser}).then(res=>{
+        axios.post('http://ec2-18-208-201-20.compute-1.amazonaws.com/updateUser',{editedUser}).then(res=>{
             console.log(res.data);
         })    
         setuserdetails(editedUser)

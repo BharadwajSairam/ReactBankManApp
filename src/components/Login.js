@@ -19,7 +19,7 @@ function Login(props) {
             password: password
         }
         
-        axios.post("http://sairam-manchella.us-east-1.elasticbeanstalk.com/validateUser", { validateuser }).then(res => {
+        axios.post("http://ec2-18-208-201-20.compute-1.amazonaws.com/validateUser", { validateuser }).then(res => {
             
             if (res.data.trim() == "Invalid Username") {
                 setFlag(false)

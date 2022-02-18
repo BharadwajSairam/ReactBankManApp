@@ -16,7 +16,7 @@ const Account = (props) => {
         setUser(props.user)
         let username=props.user.username;
         console.log(props.user.username);
-        axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/getAccounts',{username}).then(res=>{
+        axios.post('http://ec2-18-208-201-20.compute-1.amazonaws.com/getAccounts',{username}).then(res=>{
             console.log(res.data);
             setuseraccounts(res.data)
         })
@@ -44,10 +44,10 @@ const Account = (props) => {
             loan:loan
         }
 
-        axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/addAccount',{account}).then(res=>{
+        axios.post('http://ec2-18-208-201-20.compute-1.amazonaws.com/addAccount',{account}).then(res=>{
             console.log(res.data);
             let username = account.user
-            axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/getAccounts',{username}).then(res=>{
+            axios.post('http://ec2-18-208-201-20.compute-1.amazonaws.com/getAccounts',{username}).then(res=>{
             console.log(res.data);
             setuseraccounts(res.data)
         })
