@@ -47,7 +47,7 @@ const Account = (props) => {
         axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/addAccount',{account}).then(res=>{
             console.log(res.data);
             let username = account.user
-            axios.post('http://localhost:8080/getAccounts',{username}).then(res=>{
+            axios.post('http://sairam-manchella.us-east-1.elasticbeanstalk.com/getAccounts',{username}).then(res=>{
             console.log(res.data);
             setuseraccounts(res.data)
         })
